@@ -1,0 +1,22 @@
+body
+    h1= "Search by zip"
+    form(action="http://localhost:5316/getweather" method="POST")
+      p zip:
+        input(type="text" name="zip" placeholder="")
+      input(type="submit")
+
+    div
+      table(style='width:100%', border='1')
+        tr
+          th Temperature
+          th Type
+          th description
+          th city
+          th wind speed
+
+        tr 
+          td #{temp}
+          td #{type}
+          td #{desc}
+          td #{city}
+          td #{windSpeed}
