@@ -1,6 +1,6 @@
 const express = require('express')
 const request = require('request')
-var tuc = require('temp-units-conv')
+// var tuc = require('temp-units-conv')
 const app = express()
 const port = 5316
 const path = require("path")
@@ -34,11 +34,11 @@ app.post('/getweather', (req, res) => {
 
     request(api, {json: true}, (err, res, body) => {
 
-        temp = tuc.celsiusToKelvin(tuc.fahrenheitToCelsius(body.main.temp))
+        // temp = tuc.celsiusToKelvin(tuc.fahrenheitToCelsius(body.main.temp))
         
 
         weather_data = {
-            temp: temp,
+            // temp: temp,
             type: body.weather[0].main,
             desc: body.weather[0].description,
             city: body.name,
@@ -50,7 +50,7 @@ app.post('/getweather', (req, res) => {
     console.log(weather_data)
     setTimeout(function() {
         res.render('index', {
-            temp: tuc.,
+            // temp: tuc,
             type: weather_data.type,
             desc: weather_data.desc,
             city: weather_data.city,
